@@ -1,5 +1,7 @@
 Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
 
 # Poor practice 1
-
+Recipe Web service should be without public IP address and in private subnet
 # Poor practice 2
+Recipe Web service ingres rule should alow access to ALB security group
+

@@ -1,3 +1,12 @@
 Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
 
 Bonus - provide recommendations on how to remediate the vulnerabilities.
+Example of Security Hub finding
+ Failed	High	EC2.13	Security groups should not allow ingress from 0.0.0.0/0 or ::/0 to port 22	
+ 
+ recommendations: limit the ingress to IP address space of the devops team, or completely remove ingress and make this instance secure
+
+Example of AWS Config
+    c1-web-service-alb	ElasticLoadBalancingV2 LoadBalancer	-	HTTP listener rule must have HTTP to HTTPS redirection action configured	 Noncompliant
+
+    recommendations: app should allow only https traffic and load balancer target group should be on secure port

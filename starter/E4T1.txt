@@ -2,4 +2,10 @@
 
 # Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
 
+1) disable SSH password login on the application server instance
+2) remove public ip address of the application server instance
+3) close port 22 or limit the IP address space in ingress rule to one that belong to the team
+
+
 # Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+Limit the access to only free bucket/ limit the resource list in the IAM policy

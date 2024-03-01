@@ -1,13 +1,25 @@
 # Identify tools that will allow you to do the following:
-
+1) Checkov -terraform IaC analysis tools
+2) ECR - image scanning
+3) Wiz - cloud account configuration settings scanner
+4) Sonarsource - static code analysis tools
 ## Scan infrastructure as code templates
+1) Checkov -terraform IaC analysis tools
 
 ### Example vulnerability
-
+- Report if there is a overly permissive security group rule but also recommendation that are not security issue like 
+when S3 bucket do not have versioning it will give a message "Ensure all data stored in the S3 bucket have versioning enabled"
+	
 ##Scan AMI’s or containers for OS vulnerabilities
-
+Amazon ECR image scanning 
 ### Example vulnerability
+some outdate libraries
+- gives description
+    "description": "In libssh2 v1.9.0 and earlier versions, the SSH_MSG_DISCONNECT logic in packet.c has an integer overflow in a bounds check, enabling an attacker to specify an arbitrary (out-of-bounds) offset for a subsequent memory read. A crafted SSH server may be able to disclose sensitive information or cause a denial of service condition on the client system when a user connects to the server.",
+- gives recommendations
+    text": "Update all packages in the vulnerable packages section to their latest versions."
 
 ##Scan an AWS environment for cloud configuration vulnerabilities
-
+https://www.wiz.io/
 ### Example vulnerability
+It can scan IAM policies and report which one are excessive or unused permissions which should be modified or removed.
